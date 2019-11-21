@@ -1,0 +1,110 @@
+Archive Project report for game_lab3
+Thu Mar 21 13:32:50 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Thu Mar 21 13:32:50 2019 ;
+; Revision Name          ; game_lab3                             ;
+; Top-level Entity Name  ; game_lab3                             ;
+; Family                 ; Cyclone IV E                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory D:/University of Houston/add/Lab3_THOTA_P/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'D:/University of Houston/add/Lab3_THOTA_P/syn/game_lab3.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'game_lab3.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4872 megabytes
+    Info: Processing ended: Thu Mar 21 13:32:50 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++-------------------------------------------------------------------+
+; Files Archived                                                    ;
++-------------------------------------------------------------------+
+; File Name                                                         ;
++-------------------------------------------------------------------+
+; ../src/access_controller.v                                        ;
+; ../src/adder.v                                                    ;
+; ../src/button_shaper.v                                            ;
+; ../src/count10.v                                                  ;
+; ../src/count100.v                                                 ;
+; ../src/counter.v                                                  ;
+; ../src/digit_timer.v                                              ;
+; ../src/game_lab3.v                                                ;
+; ../src/load_register.v                                            ;
+; ../src/onems.v                                                    ;
+; ../src/onesdigit.v                                                ;
+; ../src/onesecond.v                                                ;
+; ../src/random_number_gen.v                                        ;
+; ../src/seven_seg.v                                                ;
+; ../src/tensdigit.v                                                ;
+; ../src/timer100ms.v                                               ;
+; c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf      ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/access_controller.v ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/adder.v             ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/button_shaper.v     ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/count10.v           ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/count100.v          ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/counter.v           ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/digit_timer.v       ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v         ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/load_register.v     ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/onems.v             ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/onesdigit.v         ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/onesecond.v         ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/random_number_gen.v ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/seven_seg.v         ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/tensdigit.v         ;
+; D:/University of Houston/add/Lab3_THOTA_P/src/timer100ms.v        ;
+; game_lab3.qpf                                                     ;
+; game_lab3.qsf                                                     ;
++-------------------------------------------------------------------+
+
+

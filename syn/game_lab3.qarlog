@@ -1,0 +1,30 @@
+Quartus Prime Archive log --	D:/University of Houston/add/Lab3_THOTA_P/syn/game_lab3.qarlog
+
+Archive:	D:/University of Houston/add/Lab3_THOTA_P/syn/game_lab3.qar
+Date:		Thu Mar 21 13:32:50 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+D:/University of Houston/add/Lab3_THOTA_P/src/access_controller.v
+D:/University of Houston/add/Lab3_THOTA_P/src/adder.v
+D:/University of Houston/add/Lab3_THOTA_P/src/button_shaper.v
+D:/University of Houston/add/Lab3_THOTA_P/src/count10.v
+D:/University of Houston/add/Lab3_THOTA_P/src/count100.v
+D:/University of Houston/add/Lab3_THOTA_P/src/counter.v
+D:/University of Houston/add/Lab3_THOTA_P/src/digit_timer.v
+D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v
+D:/University of Houston/add/Lab3_THOTA_P/src/load_register.v
+D:/University of Houston/add/Lab3_THOTA_P/src/onems.v
+D:/University of Houston/add/Lab3_THOTA_P/src/onesdigit.v
+D:/University of Houston/add/Lab3_THOTA_P/src/onesecond.v
+D:/University of Houston/add/Lab3_THOTA_P/src/random_number_gen.v
+D:/University of Houston/add/Lab3_THOTA_P/src/seven_seg.v
+D:/University of Houston/add/Lab3_THOTA_P/src/tensdigit.v
+D:/University of Houston/add/Lab3_THOTA_P/src/timer100ms.v
+D:/University of Houston/add/Lab3_THOTA_P/syn/game_lab3.qpf
+D:/University of Houston/add/Lab3_THOTA_P/syn/game_lab3.qsf
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 19 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
