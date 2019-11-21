@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Apr 10 16:09:48 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : game_lab3
+Top-level Entity Name : game_lab3
+Family : Cyclone IV E
+Total logic elements : 240
+    Total combinational functions : 237
+    Dedicated logic registers : 119
+Total registers : 119
+Total pins : 65
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

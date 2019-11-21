@@ -1,0 +1,539 @@
+Analysis & Synthesis report for game_lab3
+Wed Apr 10 16:09:48 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |game_lab3|access_controller_main:a1|access_control:a1|State
+  9. State Machine - |game_lab3|button_shaper:b2|state
+ 10. State Machine - |game_lab3|button_shaper:b1|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: button_shaper:b1
+ 15. Parameter Settings for User Entity Instance: button_shaper:b2
+ 16. Parameter Settings for User Entity Instance: access_controller_main:a1|access_control:a1
+ 17. Port Connectivity Checks: "digit_timer:d1|tensdigit:t1"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr 10 16:09:48 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; game_lab3                                   ;
+; Top-level Entity Name              ; game_lab3                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 240                                         ;
+;     Total combinational functions  ; 237                                         ;
+;     Dedicated logic registers      ; 119                                         ;
+; Total registers                    ; 119                                         ;
+; Total pins                         ; 65                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; game_lab3          ; game_lab3          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++--------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                  ; Library ;
++--------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; ../../HW13_ THOTA_P/HW13_9909/onesecond.v              ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/onesecond.v              ;         ;
+; ../../HW13_ THOTA_P/HW13_9909/access_controller_main.v ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/access_controller_main.v ;         ;
+; ../../HW13_ THOTA_P/HW13_9909/access_controller.v      ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/access_controller.v      ;         ;
+; ../src/timer100ms.v                                    ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/timer100ms.v                    ;         ;
+; ../src/tensdigit.v                                     ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/tensdigit.v                     ;         ;
+; ../src/seven_seg.v                                     ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/seven_seg.v                     ;         ;
+; ../src/random_number_gen.v                             ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/random_number_gen.v             ;         ;
+; ../src/onesdigit.v                                     ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/onesdigit.v                     ;         ;
+; ../src/onems.v                                         ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/onems.v                         ;         ;
+; ../src/load_register.v                                 ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/load_register.v                 ;         ;
+; ../src/game_lab3.v                                     ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v                     ;         ;
+; ../src/digit_timer.v                                   ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/digit_timer.v                   ;         ;
+; ../src/counter.v                                       ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/counter.v                       ;         ;
+; ../src/count100.v                                      ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/count100.v                      ;         ;
+; ../src/count10.v                                       ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/count10.v                       ;         ;
+; ../src/button_shaper.v                                 ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/button_shaper.v                 ;         ;
+; ../src/adder.v                                         ; yes             ; User Verilog HDL File  ; D:/University of Houston/add/Lab3_THOTA_P/src/adder.v                         ;         ;
++--------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 240       ;
+;                                             ;           ;
+; Total combinational functions               ; 237       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 110       ;
+;     -- 3 input functions                    ; 22        ;
+;     -- <=2 input functions                  ; 105       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 180       ;
+;     -- arithmetic mode                      ; 57        ;
+;                                             ;           ;
+; Total registers                             ; 119       ;
+;     -- Dedicated logic registers            ; 119       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 65        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 119       ;
+; Total fan-out                               ; 1255      ;
+; Average fan-out                             ; 2.58      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                          ; Entity Name            ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+------------------------+--------------+
+; |game_lab3                     ; 237 (0)             ; 119 (0)                   ; 0           ; 0            ; 0       ; 0         ; 65   ; 0            ; |game_lab3                                                                   ; game_lab3              ; work         ;
+;    |access_controller_main:a1| ; 101 (0)             ; 60 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|access_controller_main:a1                                         ; access_controller_main ; work         ;
+;       |access_control:a1|      ; 52 (52)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|access_controller_main:a1|access_control:a1                       ; access_control         ; work         ;
+;       |onesecond:one|          ; 49 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|access_controller_main:a1|onesecond:one                           ; onesecond              ; work         ;
+;          |count10:c1|          ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|access_controller_main:a1|onesecond:one|count10:c1                ; count10                ; work         ;
+;          |timer100ms:t1|       ; 37 (0)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1             ; timer100ms             ; work         ;
+;             |count100:c1|      ; 13 (13)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1|count100:c1 ; count100               ; work         ;
+;             |onems:t1|         ; 24 (24)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1|onems:t1    ; onems                  ; work         ;
+;    |adder:ad1|                 ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|adder:ad1                                                         ; adder                  ; work         ;
+;    |button_shaper:b1|          ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|button_shaper:b1                                                  ; button_shaper          ; work         ;
+;    |button_shaper:b2|          ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|button_shaper:b2                                                  ; button_shaper          ; work         ;
+;    |digit_timer:d1|            ; 19 (0)              ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|digit_timer:d1                                                    ; digit_timer            ; work         ;
+;       |onesdigit:o1|           ; 9 (9)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|digit_timer:d1|onesdigit:o1                                       ; onesdigit              ; work         ;
+;       |tensdigit:t1|           ; 10 (10)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|digit_timer:d1|tensdigit:t1                                       ; tensdigit              ; work         ;
+;    |load_register:l1|          ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|load_register:l1                                                  ; load_register          ; work         ;
+;    |onesecond:o1|              ; 50 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|onesecond:o1                                                      ; onesecond              ; work         ;
+;       |count10:c1|             ; 13 (13)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|onesecond:o1|count10:c1                                           ; count10                ; work         ;
+;       |timer100ms:t1|          ; 37 (0)              ; 25 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|onesecond:o1|timer100ms:t1                                        ; timer100ms             ; work         ;
+;          |count100:c1|         ; 13 (13)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|onesecond:o1|timer100ms:t1|count100:c1                            ; count100               ; work         ;
+;          |onems:t1|            ; 24 (24)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|onesecond:o1|timer100ms:t1|onems:t1                               ; onems                  ; work         ;
+;    |random_number_gen:r1|      ; 12 (0)              ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|random_number_gen:r1                                              ; random_number_gen      ; work         ;
+;       |counter:c1|             ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|random_number_gen:r1|counter:c1                                   ; counter                ; work         ;
+;    |seven_seg_decoder_7:s1|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|seven_seg_decoder_7:s1                                            ; seven_seg_decoder_7    ; work         ;
+;    |seven_seg_decoder_7:s2|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|seven_seg_decoder_7:s2                                            ; seven_seg_decoder_7    ; work         ;
+;    |seven_seg_decoder_7:s3|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|seven_seg_decoder_7:s3                                            ; seven_seg_decoder_7    ; work         ;
+;    |seven_seg_decoder_7:s4|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|seven_seg_decoder_7:s4                                            ; seven_seg_decoder_7    ; work         ;
+;    |seven_seg_decoder_7:s5|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|seven_seg_decoder_7:s5                                            ; seven_seg_decoder_7    ; work         ;
+;    |seven_seg_decoder_7:s6|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |game_lab3|seven_seg_decoder_7:s6                                            ; seven_seg_decoder_7    ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |game_lab3|access_controller_main:a1|access_control:a1|State                                                                     ;
++-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; State.c12 ; State.c11 ; State.c10 ; State.c9 ; State.c8 ; State.c7 ; State.c6 ; State.c5 ; State.c4 ; State.c3 ; State.c2 ; State.c1 ;
++-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; State.c1  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; State.c2  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; State.c3  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; State.c4  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; State.c5  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; State.c6  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.c7  ; 0         ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.c8  ; 0         ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.c9  ; 0         ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.c10 ; 0         ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.c11 ; 0         ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.c12 ; 1         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |game_lab3|button_shaper:b2|state              ;
++------------------+------------+------------------+-------------+
+; Name             ; state.init ; state.wait_delay ; state.pulse ;
++------------------+------------+------------------+-------------+
+; state.init       ; 0          ; 0                ; 0           ;
+; state.pulse      ; 1          ; 0                ; 1           ;
+; state.wait_delay ; 1          ; 1                ; 0           ;
++------------------+------------+------------------+-------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |game_lab3|button_shaper:b1|state              ;
++------------------+------------+------------------+-------------+
+; Name             ; state.init ; state.wait_delay ; state.pulse ;
++------------------+------------+------------------+-------------+
+; state.init       ; 0          ; 0                ; 0           ;
+; state.pulse      ; 1          ; 0                ; 1           ;
+; state.wait_delay ; 1          ; 1                ; 0           ;
++------------------+------------+------------------+-------------+
+
+
++---------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                        ;
++------------------------------------------------------+--------------------+
+; Register name                                        ; Reason for Removal ;
++------------------------------------------------------+--------------------+
+; button_shaper:b2|state.wait_delay                    ; Lost fanout        ;
+; button_shaper:b1|state.wait_delay                    ; Lost fanout        ;
+; access_controller_main:a1|access_control:a1|State~14 ; Lost fanout        ;
+; access_controller_main:a1|access_control:a1|State~15 ; Lost fanout        ;
+; access_controller_main:a1|access_control:a1|State~16 ; Lost fanout        ;
+; access_controller_main:a1|access_control:a1|State~17 ; Lost fanout        ;
+; Total Number of Removed Registers = 6                ;                    ;
++------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 119   ;
+; Number of registers using Synchronous Clear  ; 93    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 90    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |game_lab3|access_controller_main:a1|access_control:a1|rng_out                          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_lab3|load_register:l1|out[2]                                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_lab3|random_number_gen:r1|counter:c1|count_out[3]                                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_lab3|access_controller_main:a1|access_control:a1|password[0]                      ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |game_lab3|access_controller_main:a1|onesecond:one|count10:c1|counter[4]                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_lab3|random_number_gen:r1|counter:c1|count[3]                                     ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |game_lab3|onesecond:o1|count10:c1|counter[2]                                           ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1|count100:c1|counter[0] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |game_lab3|onesecond:o1|timer100ms:t1|count100:c1|counter[2]                            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1|onems:t1|count[2]      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |game_lab3|onesecond:o1|timer100ms:t1|onems:t1|count[0]                                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |game_lab3|digit_timer:d1|onesdigit:o1|timer_out[2]                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |game_lab3|digit_timer:d1|onesdigit:o1|timer_out[0]                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |game_lab3|digit_timer:d1|tensdigit:t1|timer_out1[1]                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |game_lab3|digit_timer:d1|tensdigit:t1|timer_out1[0]                                    ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |game_lab3|access_controller_main:a1|access_control:a1|State                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: button_shaper:b1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; init           ; 0     ; Signed Integer                       ;
+; pulse          ; 1     ; Signed Integer                       ;
+; wait_delay     ; 2     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: button_shaper:b2 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; init           ; 0     ; Signed Integer                       ;
+; pulse          ; 1     ; Signed Integer                       ;
+; wait_delay     ; 2     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: access_controller_main:a1|access_control:a1 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; c1             ; 0     ; Signed Integer                                                  ;
+; c2             ; 1     ; Signed Integer                                                  ;
+; c3             ; 2     ; Signed Integer                                                  ;
+; c4             ; 3     ; Signed Integer                                                  ;
+; c5             ; 4     ; Signed Integer                                                  ;
+; c6             ; 5     ; Signed Integer                                                  ;
+; c7             ; 6     ; Signed Integer                                                  ;
+; c8             ; 7     ; Signed Integer                                                  ;
+; c9             ; 8     ; Signed Integer                                                  ;
+; c10            ; 9     ; Signed Integer                                                  ;
+; c11            ; 10    ; Signed Integer                                                  ;
+; c12            ; 11    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digit_timer:d1|tensdigit:t1"                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; time_out1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 65                          ;
+; cycloneiii_ff         ; 119                         ;
+;     ENA               ; 18                          ;
+;     ENA SCLR          ; 64                          ;
+;     ENA SCLR SLD      ; 8                           ;
+;     SCLR              ; 21                          ;
+;     plain             ; 8                           ;
+; cycloneiii_lcell_comb ; 243                         ;
+;     arith             ; 57                          ;
+;         2 data inputs ; 54                          ;
+;         3 data inputs ; 3                           ;
+;     normal            ; 186                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 110                         ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.06                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Apr 10 16:09:33 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off game_lab3 -c game_lab3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/hw13_ thota_p/hw13_9909/onesecond.v
+    Info (12023): Found entity 1: onesecond File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/onesecond.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/hw13_ thota_p/hw13_9909/access_controller_main.v
+    Info (12023): Found entity 1: access_controller_main File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/access_controller_main.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/hw13_ thota_p/hw13_9909/access_controller.v
+    Info (12023): Found entity 1: access_control File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/access_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/timer100ms.v
+    Info (12023): Found entity 1: timer100ms File: D:/University of Houston/add/Lab3_THOTA_P/src/timer100ms.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/tensdigit.v
+    Info (12023): Found entity 1: tensdigit File: D:/University of Houston/add/Lab3_THOTA_P/src/tensdigit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/seven_seg.v
+    Info (12023): Found entity 1: seven_seg_decoder_7 File: D:/University of Houston/add/Lab3_THOTA_P/src/seven_seg.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/random_number_gen.v
+    Info (12023): Found entity 1: random_number_gen File: D:/University of Houston/add/Lab3_THOTA_P/src/random_number_gen.v Line: 1
+Info (15248): File "D:/University of Houston/add/Lab3_THOTA_P/src/onesecond.v" is a duplicate of already analyzed file "D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/onesecond.v" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file /university of houston/add/lab3_thota_p/src/onesecond.v
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/onesdigit.v
+    Info (12023): Found entity 1: onesdigit File: D:/University of Houston/add/Lab3_THOTA_P/src/onesdigit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/onems.v
+    Info (12023): Found entity 1: onems File: D:/University of Houston/add/Lab3_THOTA_P/src/onems.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/load_register.v
+    Info (12023): Found entity 1: load_register File: D:/University of Houston/add/Lab3_THOTA_P/src/load_register.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/game_lab3.v
+    Info (12023): Found entity 1: game_lab3 File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/digit_timer.v
+    Info (12023): Found entity 1: digit_timer File: D:/University of Houston/add/Lab3_THOTA_P/src/digit_timer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/counter.v
+    Info (12023): Found entity 1: counter File: D:/University of Houston/add/Lab3_THOTA_P/src/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/count100.v
+    Info (12023): Found entity 1: count100 File: D:/University of Houston/add/Lab3_THOTA_P/src/count100.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/count10.v
+    Info (12023): Found entity 1: count10 File: D:/University of Houston/add/Lab3_THOTA_P/src/count10.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/button_shaper.v
+    Info (12023): Found entity 1: button_shaper File: D:/University of Houston/add/Lab3_THOTA_P/src/button_shaper.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /university of houston/add/lab3_thota_p/src/adder.v
+    Info (12023): Found entity 1: adder File: D:/University of Houston/add/Lab3_THOTA_P/src/adder.v Line: 5
+Warning (10236): Verilog HDL Implicit Net warning at random_number_gen.v(5): created implicit net for "button_invert" File: D:/University of Houston/add/Lab3_THOTA_P/src/random_number_gen.v Line: 5
+Info (12127): Elaborating entity "game_lab3" for the top level hierarchy
+Info (12128): Elaborating entity "button_shaper" for hierarchy "button_shaper:b1" File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 13
+Info (12128): Elaborating entity "random_number_gen" for hierarchy "random_number_gen:r1" File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 16
+Info (12128): Elaborating entity "counter" for hierarchy "random_number_gen:r1|counter:c1" File: D:/University of Houston/add/Lab3_THOTA_P/src/random_number_gen.v Line: 6
+Info (12128): Elaborating entity "access_controller_main" for hierarchy "access_controller_main:a1" File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 18
+Info (12128): Elaborating entity "access_control" for hierarchy "access_controller_main:a1|access_control:a1" File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/access_controller_main.v Line: 9
+Warning (10230): Verilog HDL assignment warning at access_controller.v(140): truncated value with size 32 to match size of target (2) File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/access_controller.v Line: 140
+Info (12128): Elaborating entity "onesecond" for hierarchy "access_controller_main:a1|onesecond:one" File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/access_controller_main.v Line: 10
+Info (12128): Elaborating entity "timer100ms" for hierarchy "access_controller_main:a1|onesecond:one|timer100ms:t1" File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/onesecond.v Line: 9
+Info (12128): Elaborating entity "onems" for hierarchy "access_controller_main:a1|onesecond:one|timer100ms:t1|onems:t1" File: D:/University of Houston/add/Lab3_THOTA_P/src/timer100ms.v Line: 9
+Warning (10230): Verilog HDL assignment warning at onems.v(19): truncated value with size 32 to match size of target (16) File: D:/University of Houston/add/Lab3_THOTA_P/src/onems.v Line: 19
+Info (12128): Elaborating entity "count100" for hierarchy "access_controller_main:a1|onesecond:one|timer100ms:t1|count100:c1" File: D:/University of Houston/add/Lab3_THOTA_P/src/timer100ms.v Line: 10
+Warning (10230): Verilog HDL assignment warning at count100.v(22): truncated value with size 32 to match size of target (7) File: D:/University of Houston/add/Lab3_THOTA_P/src/count100.v Line: 22
+Info (12128): Elaborating entity "count10" for hierarchy "access_controller_main:a1|onesecond:one|count10:c1" File: D:/University of Houston/add/HW13_ THOTA_P/HW13_9909/onesecond.v Line: 10
+Warning (10230): Verilog HDL assignment warning at count10.v(22): truncated value with size 32 to match size of target (7) File: D:/University of Houston/add/Lab3_THOTA_P/src/count10.v Line: 22
+Info (12128): Elaborating entity "adder" for hierarchy "adder:ad1" File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 20
+Info (12128): Elaborating entity "load_register" for hierarchy "load_register:l1" File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 22
+Info (12128): Elaborating entity "seven_seg_decoder_7" for hierarchy "seven_seg_decoder_7:s1" File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 24
+Info (12128): Elaborating entity "digit_timer" for hierarchy "digit_timer:d1" File: D:/University of Houston/add/Lab3_THOTA_P/src/game_lab3.v Line: 31
+Info (12128): Elaborating entity "onesdigit" for hierarchy "digit_timer:d1|onesdigit:o1" File: D:/University of Houston/add/Lab3_THOTA_P/src/digit_timer.v Line: 11
+Info (12128): Elaborating entity "tensdigit" for hierarchy "digit_timer:d1|tensdigit:t1" File: D:/University of Houston/add/Lab3_THOTA_P/src/digit_timer.v Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 305 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 240 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Wed Apr 10 16:09:48 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:31
+
+

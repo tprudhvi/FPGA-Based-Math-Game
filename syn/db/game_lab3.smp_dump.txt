@@ -1,0 +1,27 @@
+
+State Machine - |game_lab3|access_controller_main:a1|access_control:a1|State
+Name State.c12 State.c11 State.c10 State.c9 State.c8 State.c7 State.c6 State.c5 State.c4 State.c3 State.c2 State.c1 
+State.c1 0 0 0 0 0 0 0 0 0 0 0 0 
+State.c2 0 0 0 0 0 0 0 0 0 0 1 1 
+State.c3 0 0 0 0 0 0 0 0 0 1 0 1 
+State.c4 0 0 0 0 0 0 0 0 1 0 0 1 
+State.c5 0 0 0 0 0 0 0 1 0 0 0 1 
+State.c6 0 0 0 0 0 0 1 0 0 0 0 1 
+State.c7 0 0 0 0 0 1 0 0 0 0 0 1 
+State.c8 0 0 0 0 1 0 0 0 0 0 0 1 
+State.c9 0 0 0 1 0 0 0 0 0 0 0 1 
+State.c10 0 0 1 0 0 0 0 0 0 0 0 1 
+State.c11 0 1 0 0 0 0 0 0 0 0 0 1 
+State.c12 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |game_lab3|button_shaper:b2|state
+Name state.init state.wait_delay state.pulse 
+state.init 0 0 0 
+state.pulse 1 0 1 
+state.wait_delay 1 1 0 
+
+State Machine - |game_lab3|button_shaper:b1|state
+Name state.init state.wait_delay state.pulse 
+state.init 0 0 0 
+state.pulse 1 0 1 
+state.wait_delay 1 1 0 

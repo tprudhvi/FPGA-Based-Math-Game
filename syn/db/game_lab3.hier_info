@@ -1,0 +1,764 @@
+|game_lab3
+clk => clk.IN7
+rst => rst.IN7
+button_push_pswd => button_push_pswd.IN1
+rng_button => rng_button.IN1
+load_p2 => load_p2.IN1
+player2_in[0] => player2_in[0].IN1
+player2_in[1] => player2_in[1].IN1
+player2_in[2] => player2_in[2].IN1
+player2_in[3] => player2_in[3].IN1
+toggle_sw1[0] => toggle_sw1[0].IN1
+toggle_sw1[1] => toggle_sw1[1].IN1
+toggle_sw1[2] => toggle_sw1[2].IN1
+toggle_sw1[3] => toggle_sw1[3].IN1
+toggle_sw2[0] => toggle_sw2[0].IN1
+toggle_sw2[1] => toggle_sw2[1].IN1
+toggle_sw2[2] => toggle_sw2[2].IN1
+toggle_sw2[3] => toggle_sw2[3].IN1
+toggle_sw_pswd[0] => toggle_sw_pswd[0].IN1
+toggle_sw_pswd[1] => toggle_sw_pswd[1].IN1
+toggle_sw_pswd[2] => toggle_sw_pswd[2].IN1
+toggle_sw_pswd[3] => toggle_sw_pswd[3].IN1
+green_led << access_controller_main:a1.port13
+red_led << access_controller_main:a1.port14
+sevenseg1[0] << seven_seg_decoder_7:s1.port1
+sevenseg1[1] << seven_seg_decoder_7:s1.port1
+sevenseg1[2] << seven_seg_decoder_7:s1.port1
+sevenseg1[3] << seven_seg_decoder_7:s1.port1
+sevenseg1[4] << seven_seg_decoder_7:s1.port1
+sevenseg1[5] << seven_seg_decoder_7:s1.port1
+sevenseg1[6] << seven_seg_decoder_7:s1.port1
+sevenseg2[0] << seven_seg_decoder_7:s2.port1
+sevenseg2[1] << seven_seg_decoder_7:s2.port1
+sevenseg2[2] << seven_seg_decoder_7:s2.port1
+sevenseg2[3] << seven_seg_decoder_7:s2.port1
+sevenseg2[4] << seven_seg_decoder_7:s2.port1
+sevenseg2[5] << seven_seg_decoder_7:s2.port1
+sevenseg2[6] << seven_seg_decoder_7:s2.port1
+sevenseg3[0] << seven_seg_decoder_7:s3.port1
+sevenseg3[1] << seven_seg_decoder_7:s3.port1
+sevenseg3[2] << seven_seg_decoder_7:s3.port1
+sevenseg3[3] << seven_seg_decoder_7:s3.port1
+sevenseg3[4] << seven_seg_decoder_7:s3.port1
+sevenseg3[5] << seven_seg_decoder_7:s3.port1
+sevenseg3[6] << seven_seg_decoder_7:s3.port1
+sevenseg4[0] << seven_seg_decoder_7:s4.port1
+sevenseg4[1] << seven_seg_decoder_7:s4.port1
+sevenseg4[2] << seven_seg_decoder_7:s4.port1
+sevenseg4[3] << seven_seg_decoder_7:s4.port1
+sevenseg4[4] << seven_seg_decoder_7:s4.port1
+sevenseg4[5] << seven_seg_decoder_7:s4.port1
+sevenseg4[6] << seven_seg_decoder_7:s4.port1
+sevenseg5[0] << seven_seg_decoder_7:s5.port1
+sevenseg5[1] << seven_seg_decoder_7:s5.port1
+sevenseg5[2] << seven_seg_decoder_7:s5.port1
+sevenseg5[3] << seven_seg_decoder_7:s5.port1
+sevenseg5[4] << seven_seg_decoder_7:s5.port1
+sevenseg5[5] << seven_seg_decoder_7:s5.port1
+sevenseg5[6] << seven_seg_decoder_7:s5.port1
+sevenseg6[0] << seven_seg_decoder_7:s6.port1
+sevenseg6[1] << seven_seg_decoder_7:s6.port1
+sevenseg6[2] << seven_seg_decoder_7:s6.port1
+sevenseg6[3] << seven_seg_decoder_7:s6.port1
+sevenseg6[4] << seven_seg_decoder_7:s6.port1
+sevenseg6[5] << seven_seg_decoder_7:s6.port1
+sevenseg6[6] << seven_seg_decoder_7:s6.port1
+
+
+|game_lab3|button_shaper:b1
+clk => state~1.DATAIN
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+b_in => state.DATAA
+b_in => next_state.pulse.DATAB
+b_in => Selector0.IN1
+b_out <= b_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|button_shaper:b2
+clk => state~1.DATAIN
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+b_in => state.DATAA
+b_in => next_state.pulse.DATAB
+b_in => Selector0.IN1
+b_out <= b_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|random_number_gen:r1
+clk => clk.IN1
+rst => rst.IN1
+button => button_invert.IN1
+random[0] <= counter:c1.port3
+random[1] <= counter:c1.port3
+random[2] <= counter:c1.port3
+random[3] <= counter:c1.port3
+
+
+|game_lab3|random_number_gen:r1|counter:c1
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+button => count.OUTPUTSELECT
+button => count.OUTPUTSELECT
+button => count.OUTPUTSELECT
+button => count.OUTPUTSELECT
+button => count_out.OUTPUTSELECT
+button => count_out.OUTPUTSELECT
+button => count_out.OUTPUTSELECT
+button => count_out.OUTPUTSELECT
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|access_controller_main:a1
+clk => clk.IN2
+rst => rst.IN2
+password[0] <= access_control:a1.port2
+password[1] <= access_control:a1.port2
+password[2] <= access_control:a1.port2
+password[3] <= access_control:a1.port2
+button_push => button_push.IN1
+rng_button => rng_button.IN1
+rng_out <= access_control:a1.port5
+toggle_switch[0] => toggle_switch[0].IN1
+toggle_switch[1] => toggle_switch[1].IN1
+toggle_switch[2] => toggle_switch[2].IN1
+toggle_switch[3] => toggle_switch[3].IN1
+load => load.IN1
+load_out <= access_control:a1.port8
+enable <= access_control:a1.port9
+reconfig <= access_control:a1.port10
+time_out => time_out.IN1
+donot_borrow <= access_control:a1.port12
+green_led <= access_control:a1.port13
+red_led <= access_control:a1.port14
+
+
+|game_lab3|access_controller_main:a1|access_control:a1
+clk => count[0].CLK
+clk => count[1].CLK
+clk => timer_enable~reg0.CLK
+clk => sofarsogood.CLK
+clk => donot_borrow~reg0.CLK
+clk => reconfig~reg0.CLK
+clk => enable~reg0.CLK
+clk => load_out~reg0.CLK
+clk => rng_out~reg0.CLK
+clk => red_led~reg0.CLK
+clk => green_led~reg0.CLK
+clk => password[0]~reg0.CLK
+clk => password[1]~reg0.CLK
+clk => password[2]~reg0.CLK
+clk => password[3]~reg0.CLK
+clk => State~13.DATAIN
+rst => password.OUTPUTSELECT
+rst => password.OUTPUTSELECT
+rst => password.OUTPUTSELECT
+rst => password.OUTPUTSELECT
+rst => green_led.OUTPUTSELECT
+rst => red_led.OUTPUTSELECT
+rst => rng_out.OUTPUTSELECT
+rst => load_out.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => State.OUTPUTSELECT
+rst => enable.OUTPUTSELECT
+rst => reconfig.OUTPUTSELECT
+rst => donot_borrow.OUTPUTSELECT
+rst => sofarsogood.OUTPUTSELECT
+rst => timer_enable.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+password[0] <= password[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+password[1] <= password[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+password[2] <= password[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+password[3] <= password[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+button_push => password.OUTPUTSELECT
+button_push => password.OUTPUTSELECT
+button_push => password.OUTPUTSELECT
+button_push => password.OUTPUTSELECT
+button_push => sofarsogood.OUTPUTSELECT
+button_push => sofarsogood.OUTPUTSELECT
+button_push => sofarsogood.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => sofarsogood.OUTPUTSELECT
+button_push => green_led.OUTPUTSELECT
+button_push => red_led.OUTPUTSELECT
+button_push => donot_borrow.OUTPUTSELECT
+button_push => reconfig.OUTPUTSELECT
+button_push => enable.OUTPUTSELECT
+button_push => timer_enable.OUTPUTSELECT
+button_push => count.OUTPUTSELECT
+button_push => count.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => State.OUTPUTSELECT
+button_push => Selector8.IN7
+button_push => Selector9.IN7
+button_push => Selector10.IN7
+button_push => Selector12.IN7
+button_push => Selector13.IN7
+button_push => Selector14.IN6
+button_push => Selector20.IN2
+button_push => Selector20.IN3
+button_push => Selector19.IN2
+button_push => Selector13.IN5
+button_push => Selector12.IN5
+button_push => Selector11.IN6
+button_push => Selector10.IN5
+button_push => Selector9.IN5
+button_push => Selector8.IN5
+button_push => Selector7.IN7
+rng_button => rng_out.DATAB
+rng_out <= rng_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+toggle_switch[0] => password.DATAB
+toggle_switch[0] => Equal0.IN3
+toggle_switch[0] => Equal1.IN1
+toggle_switch[1] => password.DATAB
+toggle_switch[1] => Equal0.IN2
+toggle_switch[1] => Equal1.IN3
+toggle_switch[2] => password.DATAB
+toggle_switch[2] => Equal0.IN1
+toggle_switch[2] => Equal1.IN2
+toggle_switch[3] => password.DATAB
+toggle_switch[3] => Equal0.IN0
+toggle_switch[3] => Equal1.IN0
+load => load_out.DATAB
+load_out <= load_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reconfig <= reconfig~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_out => ~NO_FANOUT~
+donot_borrow <= donot_borrow~reg0.DB_MAX_OUTPUT_PORT_TYPE
+green_led <= green_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+red_led <= red_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_enable <= timer_enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer1s_out => count.OUTPUTSELECT
+timer1s_out => count.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+timer1s_out => State.OUTPUTSELECT
+
+
+|game_lab3|access_controller_main:a1|onesecond:one
+clk => clk.IN2
+rst => rst.IN2
+enable => enable.IN1
+out <= count10:c1.port3
+
+
+|game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1
+clk => clk.IN2
+rst => rst.IN2
+enable => enable.IN1
+out <= count100:c1.port3
+
+
+|game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1|onems:t1
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => out~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|access_controller_main:a1|onesecond:one|timer100ms:t1|count100:c1
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => out~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => out.OUTPUTSELECT
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|access_controller_main:a1|onesecond:one|count10:c1
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => out~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => out.OUTPUTSELECT
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|adder:ad1
+a[0] => Add0.IN4
+a[1] => Add0.IN3
+a[2] => Add0.IN2
+a[3] => Add0.IN1
+b[0] => Add0.IN8
+b[1] => Add0.IN7
+b[2] => Add0.IN6
+b[3] => Add0.IN5
+sum[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+sum[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+sum[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+sum[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|load_register:l1
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+load => out.OUTPUTSELECT
+load => out.OUTPUTSELECT
+load => out.OUTPUTSELECT
+load => out.OUTPUTSELECT
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[2] => out.DATAB
+in[3] => out.DATAB
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|seven_seg_decoder_7:s1
+decoder_in[0] => Decoder0.IN3
+decoder_in[1] => Decoder0.IN2
+decoder_in[2] => Decoder0.IN1
+decoder_in[3] => Decoder0.IN0
+decoder_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|seven_seg_decoder_7:s2
+decoder_in[0] => Decoder0.IN3
+decoder_in[1] => Decoder0.IN2
+decoder_in[2] => Decoder0.IN1
+decoder_in[3] => Decoder0.IN0
+decoder_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|seven_seg_decoder_7:s3
+decoder_in[0] => Decoder0.IN3
+decoder_in[1] => Decoder0.IN2
+decoder_in[2] => Decoder0.IN1
+decoder_in[3] => Decoder0.IN0
+decoder_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|seven_seg_decoder_7:s4
+decoder_in[0] => Decoder0.IN3
+decoder_in[1] => Decoder0.IN2
+decoder_in[2] => Decoder0.IN1
+decoder_in[3] => Decoder0.IN0
+decoder_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|seven_seg_decoder_7:s5
+decoder_in[0] => Decoder0.IN3
+decoder_in[1] => Decoder0.IN2
+decoder_in[2] => Decoder0.IN1
+decoder_in[3] => Decoder0.IN0
+decoder_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|seven_seg_decoder_7:s6
+decoder_in[0] => Decoder0.IN3
+decoder_in[1] => Decoder0.IN2
+decoder_in[2] => Decoder0.IN1
+decoder_in[3] => Decoder0.IN0
+decoder_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|digit_timer:d1
+clk => clk.IN2
+rst => rst.IN2
+onesec_in => onesec_in.IN1
+toggle_switch[0] => toggle_switch[0].IN1
+toggle_switch[1] => toggle_switch[1].IN1
+toggle_switch[2] => toggle_switch[2].IN1
+toggle_switch[3] => toggle_switch[3].IN1
+toggle_sw1[0] => toggle_sw1[0].IN1
+toggle_sw1[1] => toggle_sw1[1].IN1
+toggle_sw1[2] => toggle_sw1[2].IN1
+toggle_sw1[3] => toggle_sw1[3].IN1
+timer_out[0] <= onesdigit:o1.port2
+timer_out[1] <= onesdigit:o1.port2
+timer_out[2] <= onesdigit:o1.port2
+timer_out[3] <= onesdigit:o1.port2
+timer_out1[0] <= tensdigit:t1.port4
+timer_out1[1] <= tensdigit:t1.port4
+timer_out1[2] <= tensdigit:t1.port4
+timer_out1[3] <= tensdigit:t1.port4
+time_out <= onesdigit:o1.port6
+donot_borrow_in1 => donot_borrow_in1.IN1
+reconfig => reconfig.IN2
+
+
+|game_lab3|digit_timer:d1|onesdigit:o1
+onesec_in => timer_out.OUTPUTSELECT
+onesec_in => timer_out.OUTPUTSELECT
+onesec_in => timer_out.OUTPUTSELECT
+onesec_in => timer_out.OUTPUTSELECT
+onesec_in => ten_timer_in.OUTPUTSELECT
+toggle_switch[0] => timer_out.DATAB
+toggle_switch[1] => timer_out.DATAB
+toggle_switch[2] => timer_out.DATAB
+toggle_switch[3] => timer_out.DATAB
+timer_out[0] <= timer_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_out[1] <= timer_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_out[2] <= timer_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_out[3] <= timer_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => ten_timer_in~reg0.CLK
+clk => time_out~reg0.CLK
+clk => timer_out[0]~reg0.CLK
+clk => timer_out[1]~reg0.CLK
+clk => timer_out[2]~reg0.CLK
+clk => timer_out[3]~reg0.CLK
+rst => timer_out.OUTPUTSELECT
+rst => timer_out.OUTPUTSELECT
+rst => timer_out.OUTPUTSELECT
+rst => timer_out.OUTPUTSELECT
+rst => ten_timer_in.OUTPUTSELECT
+rst => time_out~reg0.ENA
+donot_borrow_in => timer_out.DATAB
+donot_borrow_in => timer_out.DATAB
+donot_borrow_in => ten_timer_in.DATAB
+time_out <= time_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reconfig => timer_out.OUTPUTSELECT
+reconfig => timer_out.OUTPUTSELECT
+reconfig => timer_out.OUTPUTSELECT
+reconfig => timer_out.OUTPUTSELECT
+reconfig => ten_timer_in.OUTPUTSELECT
+ten_timer_in <= ten_timer_in~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|digit_timer:d1|tensdigit:t1
+clk => time_out1~reg0.CLK
+clk => donot_borrow_out1~reg0.CLK
+clk => timer_out1[0]~reg0.CLK
+clk => timer_out1[1]~reg0.CLK
+clk => timer_out1[2]~reg0.CLK
+clk => timer_out1[3]~reg0.CLK
+rst => timer_out1.OUTPUTSELECT
+rst => timer_out1.OUTPUTSELECT
+rst => timer_out1.OUTPUTSELECT
+rst => timer_out1.OUTPUTSELECT
+rst => donot_borrow_out1.OUTPUTSELECT
+rst => time_out1.OUTPUTSELECT
+tenthsec => timer_out1.OUTPUTSELECT
+tenthsec => timer_out1.OUTPUTSELECT
+tenthsec => timer_out1.OUTPUTSELECT
+tenthsec => timer_out1.OUTPUTSELECT
+tenthsec => time_out1.OUTPUTSELECT
+tenthsec => donot_borrow_out1.OUTPUTSELECT
+toggle_sw1[0] => timer_out1.DATAB
+toggle_sw1[1] => timer_out1.DATAB
+toggle_sw1[2] => timer_out1.DATAB
+toggle_sw1[3] => timer_out1.DATAB
+timer_out1[0] <= timer_out1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_out1[1] <= timer_out1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_out1[2] <= timer_out1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_out1[3] <= timer_out1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+donot_borrow_in1 => donot_borrow_out1.OUTPUTSELECT
+donot_borrow_in1 => timer_out1.DATAB
+donot_borrow_in1 => timer_out1.DATAB
+donot_borrow_in1 => time_out1.DATAB
+donot_borrow_out1 <= donot_borrow_out1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reconfig1 => timer_out1.OUTPUTSELECT
+reconfig1 => timer_out1.OUTPUTSELECT
+reconfig1 => timer_out1.OUTPUTSELECT
+reconfig1 => timer_out1.OUTPUTSELECT
+reconfig1 => time_out1.OUTPUTSELECT
+reconfig1 => donot_borrow_out1.OUTPUTSELECT
+time_out1 <= time_out1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|onesecond:o1
+clk => clk.IN2
+rst => rst.IN2
+enable => enable.IN1
+out <= count10:c1.port3
+
+
+|game_lab3|onesecond:o1|timer100ms:t1
+clk => clk.IN2
+rst => rst.IN2
+enable => enable.IN1
+out <= count100:c1.port3
+
+
+|game_lab3|onesecond:o1|timer100ms:t1|onems:t1
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => out~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|onesecond:o1|timer100ms:t1|count100:c1
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => out~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => out.OUTPUTSELECT
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_lab3|onesecond:o1|count10:c1
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => out~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+rst => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => counter.OUTPUTSELECT
+count => out.OUTPUTSELECT
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
